@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jack Microsoft Work - EXPERTS TECH HUB</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Header with background image */
+        header {
+            color: white;
+            text-align: center;
+            padding: 40px 0 20px 0;
+            background-image: url('header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(50, 95, 241, 0.6);
+            z-index: 0;
+        }
+
+        header img.logo {
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            border: 3px solid white;
+            display: block;
+            margin: 0 auto 10px auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            margin: 10px 0 5px;
+            font-size: 2.5em;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav {
+            position: relative;
+            z-index: 1;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover { text-decoration: underline; }
+
+        /* Main content */
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        main img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        main h2 {
+            color: #325ff1;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        main p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        /* Card grid */
+        .card-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            margin: 0 0 10px;
+            color: #325ff1;
+        }
+
+        .card-content p {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 900px) {
+            .card-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .card-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #325ff1;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+
+        footer img.logo {
+            width: 40px; height: 40px;
+            vertical-align: middle;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border: 3px solid white;
+            border-radius: 8px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 1000;
+        }
+        .close-btn:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="me.jpg" alt="EXPERTS TECH HUB Logo" class="logo">
+        <h1>Jack Microsoft Work</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="microsoft.html">Microsoft Skills</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <img src="red.jpg" alt="Jack Microsoft Work">
+        <h2>Advanced Excel Training</h2>
+        <p>Jack specializes in Microsoft Excel, teaching students how to create dynamic spreadsheets, perform powerful data analysis, and automate workflows with VBA.</p>
+        <p>From pivot tables to complex formulas, this training covers everything you need to become a true Excel expert.</p>
+
+        <div class="card-section">
+            <div class="card">
+                <img src="Jack (1).png" alt="Excel Basics" onclick="openLightbox(this.src)">
+                <div class="card-content">
+                    <h3>Excel Basics</h3>
+                    <p>Learn cell formatting, basic formulas, and essential shortcuts for productivity.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="Jack (2).png" alt="Data Analysis" onclick="openLightbox(this.src)">
+                <div class="card-content">
+                    <h3>Data Analysis</h3>
+                    <p>Master pivot tables, charts, and filters to transform raw data into insights.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="Jack (3).png" alt="Automation with VBA" onclick="openLightbox(this.src)">
+                <div class="card-content">
+                    <h3>Automation with VBA</h3>
+                    <p>Automate repetitive tasks and build custom Excel tools with VBA programming.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox container -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <img src="" alt="Full View">
+    </div>
+
+    <footer>
+        <img src="me.jpg" alt="Footer Logo" class="logo">
+        &copy; 2025 EXPERTS TECH HUB
+    </footer>
+
+    <script>
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+    </script>
+</body>
+</html>

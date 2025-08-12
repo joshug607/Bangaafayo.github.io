@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aisha Microsoft Work - EXPERTS TECH HUB</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; }
+        header { color: white; text-align: center; padding: 40px 0 20px 0; background-image: url('header-bg.jpg'); background-size: cover; background-position: center; position: relative; }
+        header::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(50, 95, 241, 0.6); z-index: 0; }
+        header img.logo { width: 120px; height: 120px; border-radius: 50%; border: 3px solid white; display: block; margin: 0 auto 10px auto; position: relative; z-index: 1; }
+        header h1 { margin: 10px 0 5px; font-size: 2.5em; position: relative; z-index: 1; }
+        nav { position: relative; z-index: 1; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        main { max-width: 1100px; margin: 40px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        main img { width: 100%; border-radius: 10px; margin-bottom: 20px; cursor: pointer; }
+        main h2 { color: #325ff1; font-size: 2em; margin-bottom: 15px; }
+        main p { font-size: 1.1em; line-height: 1.6; text-align: justify; margin-bottom: 20px; }
+        .card-section { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
+        .card { background: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card img { width: 100%; height: 200px; object-fit: cover; cursor: pointer; }
+        .card-content { padding: 15px; }
+        .card-content h3 { margin: 0 0 10px; color: #325ff1; }
+        .card-content p { font-size: 0.95em; color: #555; line-height: 1.4; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        @media (max-width: 900px) { .card-section { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .card-section { grid-template-columns: 1fr; } }
+        footer { background-color: #325ff1; color: white; text-align: center; padding: 15px 0; margin-top: 40px; }
+        footer img.logo { width: 40px; height: 40px; vertical-align: middle; margin-right: 10px; border-radius: 50%; }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        .lightbox img {
+            display: block;
+            max-width: 90%;
+            max-height: 80%;
+            margin: 50px auto;
+            border-radius: 10px;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px; right: 35px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .close-btn:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="me.jpg" alt="EXPERTS TECH HUB Logo" class="logo">
+        <h1>Aisha Microsoft Work</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="microsoft.html">Microsoft Skills</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <img src="powerpoint.jpg" alt="Aisha Microsoft Work" class="clickable">
+        <h2>PowerPoint Presentation Mastery</h2>
+        <p>Aisha helps students design stunning and impactful presentations using Microsoft PowerPoint.</p>
+        <p>Her training covers slide design, animations, transitions, and storytelling techniques to ensure every presentation impresses.</p>
+
+        <div class="card-section">
+            <div class="card">
+                <img src="Aisha (1).png" alt="Slide Design" class="clickable">
+                <div class="card-content">
+                    <h3>Slide Design</h3>
+                    <p>Learn how to create clean, professional, and visually appealing slides.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="Aisha (2).png" alt="Animations" class="clickable">
+                <div class="card-content">
+                    <h3>Animations</h3>
+                    <p>Master animations and transitions that keep your audience engaged.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="Aisha (3).png" alt="Storytelling" class="clickable">
+                <div class="card-content">
+                    <h3>Storytelling</h3>
+                    <p>Learn how to structure presentations for maximum impact and clarity.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <img id="lightboxImg" src="" alt="Full View">
+    </div>
+
+    <footer>
+        <img src="me.jpg" alt="Footer Logo" class="logo">
+        &copy; 2025 EXPERTS TECH HUB
+    </footer>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const closeBtn = document.getElementById('closeBtn');
+        const clickableImages = document.querySelectorAll('.clickable');
+
+        clickableImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'block';
+                lightboxImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
